@@ -1,8 +1,8 @@
 import * as React from "react";
 
-export const Author = (
-	{email, score}: {email: string, score: number}
-) => 
+export interface AuthorProps { email: string; score: number; }
+
+export const Author = ({email, score}: AuthorProps) => 
 	<li>
 		<span>
 			{ email  }

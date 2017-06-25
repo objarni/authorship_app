@@ -1,7 +1,10 @@
 import * as React from "react";
 import { Author } from "./Author"
 
-export const AuthorList = (props: any) => 
+export interface AuthorListProps { children?: any }
+
+
+export const AuthorList = ({children}: AuthorListProps) => 
 	<ol>
-		{ props.children }
+		{ children }
 	</ol>;
