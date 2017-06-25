@@ -1,9 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Hello } from "./components/Hello";
+import { AuthorList } from "./components/AuthorList";
+import { Author } from "./components/Author";
 
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
+    <AuthorList>
+    	<Author email="olof.bjarnason@gmail.com" score={80.0} />
+    	<Author email="neppord@gmail.com" score={20.0} />
+    </AuthorList>,
     document.getElementById("example")
 );
