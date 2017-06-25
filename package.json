@@ -1,0 +1,26 @@
+{
+  "name": "authorship_app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/objarni/authorship_app.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/objarni/authorship_app/issues"
+  },
+  "homepage": "https://github.com/objarni/authorship_app#readme",
+  "dependencies": {
+    "@types/react": "^15.0.31",
+    "@types/react-dom": "^15.5.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.0.0"
+  }
+}
