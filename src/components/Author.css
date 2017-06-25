@@ -1,9 +1,27 @@
 .author {
-	margin: 20px;
+	display: flex;
+	margin: auto;
+	width: 75%;
+}
+
+.author-email,
+.author-score {
+	padding: 9px;
+	margin: 1px;
 }
 
 .author-email {
 	background-color: lightblue;
+	flex-grow: 1;
+}
+
+.author-score {
+	text-align: right;
+	background-color: lightgreen;
+}
+
+.author-score.is-high {
+	background-color: orangered;
 }
 
 .author-score:after {

@@ -7,7 +7,7 @@ export const Author = ({email, score}: AuthorProps) =>
 		<span className="author-email">
 			{ email  }
 		</span>
-		<span className="author-score">
+		<span className={`author-score ${score >= 80 ? 'is-high' : ''}`}>
 			{ score  }
 		</span>
 	</li>;
