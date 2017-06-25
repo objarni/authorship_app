@@ -25,13 +25,33 @@ class App extends React.Component<any, any> {
         };
     }
 
+    public componentDidMount(){
+        setInterval(this.randomizeScore.bind(this), 1500);
+    }
+
+    public randomizeScore() {
+        this.setState({
+            authors: [
+                {
+                    email: "olof.bjarnason@gmail.com",
+                    score: Math.floor(100.0 * Math.random())
+                },
+                {
+                    email: "neppord@gmail.com",
+                    score: Math.floor(100.0 * Math.random())
+                }
+            ] 
+        });
+
+    }
+
     public render() {
         const {authors} = this.state;
         return (
             <div className="app">
                 <h1>Authorship Visualizer</h1>
                 <h2>Commit: #239087233nmeroi234io</h2>
-                <AuthorList>{authors.map((a: any) => <Author {...a} />)}</AuthorList>
+                <AuthorList>{authors.map((a: any) => <Author key={a.email} {...a} />)}</AuthorList>
             </div>
         );
     }

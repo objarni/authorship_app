@@ -14,8 +14,10 @@
 }
 
 .author-score {
-	text-align: right;
+	text-align: center;
 	background-color: lightgreen;
+	min-width: 4em;
+	transition: background-color 0.25s;
 }
 
 .author-score.is-high {
