@@ -21,7 +21,11 @@
 }
 
 .author-score.is-high {
-	background-color: orangered;
+	background-color: darkorange;
+}
+
+.author-score.is-medium {
+	background-color: lightseagreen;
 }
 
 .author-score:after {
