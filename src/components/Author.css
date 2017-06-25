@@ -1,0 +1,11 @@
+.author {
+	margin: 20px;
+}
+
+.author-email {
+	background-color: lightblue;
+}
+
+.author-score:after {
+	content: "%";
+}
