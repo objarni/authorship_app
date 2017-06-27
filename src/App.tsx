@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom";
 
 import "./App.css"
 
+import { CommitView } from "./components/CommitView";
 import { AuthorList } from "./components/AuthorList";
 import { Author } from "./components/Author";
 
@@ -50,7 +51,7 @@ class App extends React.Component<any, any> {
         return (
             <div className="app">
                 <h1>Authorship Visualizer</h1>
-                <h2>Commit: #239087233nmeroi234io</h2>
+                <CommitView commitid="62ae2cf" />
                 <AuthorList>{authors.map((a: any) => <Author key={a.email} {...a} />)}</AuthorList>
             </div>
         );
