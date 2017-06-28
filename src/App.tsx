@@ -12,6 +12,7 @@ class App extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
+            commitid: "62ae2cf",
             authors:
             [
                 {
@@ -27,11 +28,12 @@ class App extends React.Component<any, any> {
     }
 
     public componentDidMount(){
-        setInterval(this.randomizeScore.bind(this), 1500);
+        setInterval(this.randomizeState.bind(this), 1500);
     }
 
-    public randomizeScore() {
+    public randomizeState() {
         this.setState({
+            commitid: "62ae2cf",
             authors: [
                 {
                     email: "olof.bjarnason@gmail.com",
@@ -47,11 +49,11 @@ class App extends React.Component<any, any> {
     }
 
     public render() {
-        const {authors} = this.state;
+        const {authors, commitid} = this.state;
         return (
             <div className="app">
                 <h1>Authorship Visualizer</h1>
-                <CommitView commitid="62ae2cf" />
+                <CommitView commitid={commitid} />
                 <AuthorList>{authors.map((a: any) => <Author key={a.email} {...a} />)}</AuthorList>
             </div>
         );
