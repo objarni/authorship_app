@@ -31,11 +31,11 @@ class App extends React.Component<any, any> {
                     [
                         {
                             email: "olof.bjarnason@gmail.com",
-                            score: 80.0
+                            score: 79.0
                         },
                         {
                             email: "neppord@gmail.com",
-                            score: 20.0
+                            score: 21.0
                         }
                     ]
                 },
@@ -45,11 +45,11 @@ class App extends React.Component<any, any> {
                     [
                         {
                             email: "olof.bjarnason@gmail.com",
-                            score: 75.0
+                            score: 50.0
                         },
                         {
                             email: "neppord@gmail.com",
-                            score: 25.0
+                            score: 50.0
                         }
                     ]
                 }
