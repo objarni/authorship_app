@@ -9,8 +9,18 @@ export interface FrameNavProps {
 
 
 export const FrameNav = (props: FrameNavProps) =>
-	<div className="l-center">
-		<input disabled={props.ix==1} type="Button" onClick={props.prevCb} value="Prev" />
+	<div>
+		<input
+		      disabled={props.ix==1}
+		      type="Button"
+		      onClick={props.prevCb}
+		      value="Prev"
+		/>
 		{props.ix} / {props.total}
-		<input disabled={props.ix==props.total} type="Button" onClick={props.nextCb} value="Next" />
+		<input
+		       disabled={props.ix==props.total}
+		       type="Button"
+		       onClick={props.nextCb}
+		       value="Next"
+		/>
 	</div>
