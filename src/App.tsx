@@ -6,54 +6,82 @@ import "./App.css"
 import { CommitView } from "./components/CommitView";
 import { AuthorList } from "./components/AuthorList";
 import { Author } from "./components/Author";
+import { FrameNav } from "./components/FrameNav";
 
 class App extends React.Component<any, any> {
 
     constructor(props: any) {
         super(props);
         this.state = {
-            commitid: "62ae2cf",
-            authors:
-            [
+            atCommit: 0,
+            commits: [
                 {
-                    email: "olof.bjarnason@gmail.com",
-                    score: 80.0
+                    commitid: "a9cb4bd",
+                    authors:
+                    [
+                        {
+                            email: "olof.bjarnason@gmail.com",
+                            score: 100.0
+                        }
+                    ]
                 },
                 {
-                    email: "neppord@gmail.com",
-                    score: 20.0
+                    commitid: "62ae2cf",
+                    authors:
+                    [
+                        {
+                            email: "olof.bjarnason@gmail.com",
+                            score: 80.0
+                        },
+                        {
+                            email: "neppord@gmail.com",
+                            score: 20.0
+                        }
+                    ]
+                },
+                {
+                    commitid: "797741d",
+                    authors:
+                    [
+                        {
+                            email: "olof.bjarnason@gmail.com",
+                            score: 75.0
+                        },
+                        {
+                            email: "neppord@gmail.com",
+                            score: 25.0
+                        }
+                    ]
                 }
             ]
         };
     }
 
-    public componentDidMount(){
-        setInterval(this.randomizeState.bind(this), 1500);
+    onPrev = () => {
+        this.setState((prevState, props) => ({
+            atCommit: prevState.atCommit - 1
+        }))
     }
 
-    public randomizeState() {
-        this.setState({
-            commitid: "62ae2cf",
-            authors: [
-                {
-                    email: "olof.bjarnason@gmail.com",
-                    score: Math.floor(100.0 * Math.random())
-                },
-                {
-                    email: "neppord@gmail.com",
-                    score: Math.floor(100.0 * Math.random())
-                }
-            ] 
-        });
-
+    onNext = () => {
+        this.setState((prevState, props) => ({
+            atCommit: prevState.atCommit + 1
+        }))
     }
 
     public render() {
-        const {authors, commitid} = this.state;
+        const {atCommit} = this.state;
+        const {authors, commitid} = this.state.commits[atCommit];
+        const numCommits = this.state.commits.length;
         return (
             <div className="app">
                 <h1>Authorship Visualizer</h1>
                 <CommitView commitid={commitid} />
+                <FrameNav
+                  ix={atCommit+1}
+                  total={numCommits}
+                  prevCb={this.onPrev}
+                  nextCb={this.onNext} />
                 <AuthorList>{authors.map((a: any) => <Author key={a.email} {...a} />)}</AuthorList>
             </div>
         );
