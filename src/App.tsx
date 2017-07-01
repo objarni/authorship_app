@@ -1,4 +1,4 @@
-import * as React from "react";
+import* as React from "react";
 import * as ReactDOM from "react-dom";
 
 import "./App.css"
@@ -8,52 +8,15 @@ import { AuthorList } from "./components/AuthorList";
 import { Author } from "./components/Author";
 import { FrameNav } from "./components/FrameNav";
 
+import { data } from "./Data";
+
 class App extends React.Component<any, any> {
 
     constructor(props: any) {
         super(props);
         this.state = {
             atCommit: 0,
-            commits: [
-                {
-                    commitid: "a9cb4bd",
-                    authors:
-                    [
-                        {
-                            email: "olof.bjarnason@gmail.com",
-                            score: 100.0
-                        }
-                    ]
-                },
-                {
-                    commitid: "62ae2cf",
-                    authors:
-                    [
-                        {
-                            email: "olof.bjarnason@gmail.com",
-                            score: 79.0
-                        },
-                        {
-                            email: "neppord@gmail.com",
-                            score: 21.0
-                        }
-                    ]
-                },
-                {
-                    commitid: "797741d",
-                    authors:
-                    [
-                        {
-                            email: "olof.bjarnason@gmail.com",
-                            score: 50.0
-                        },
-                        {
-                            email: "neppord@gmail.com",
-                            score: 50.0
-                        }
-                    ]
-                }
-            ]
+            commits: data
         };
     }
 
