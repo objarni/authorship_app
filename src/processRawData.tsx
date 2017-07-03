@@ -45,5 +45,5 @@ export const processRawData = (rawData: CommitRaw[]): CommitScore[] => {
             authors: processedAuthors
         };
     }
-    return rawData.map(processCommit);
+    return rawData.map(processCommit).reverse();
 }
