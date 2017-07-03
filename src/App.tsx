@@ -22,7 +22,7 @@ class App extends React.Component<any, any> {
 
     gotoCommit = (ix: number) => {
         this.setState((prevState, props) => ({
-            atCommit: ix
+            atCommit: ix-1
         }))
     }
 
