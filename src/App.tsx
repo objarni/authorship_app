@@ -20,15 +20,9 @@ class App extends React.Component<any, any> {
         };
     }
 
-    onPrev = () => {
+    gotoCommit = (ix: number) => {
         this.setState((prevState, props) => ({
-            atCommit: prevState.atCommit - 1
-        }))
-    }
-
-    onNext = () => {
-        this.setState((prevState, props) => ({
-            atCommit: prevState.atCommit + 1
+            atCommit: ix
         }))
     }
 
@@ -43,8 +37,8 @@ class App extends React.Component<any, any> {
                 <FrameNav
                   ix={atCommit+1}
                   total={numCommits}
-                  prevCb={this.onPrev}
-                  nextCb={this.onNext} />
+                  gotoCommitCb={this.gotoCommit}
+                />
                 <AuthorList>{authors.map((a: any) => <Author key={a.email} {...a} />)}</AuthorList>
             </div>
         );
