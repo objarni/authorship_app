@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import "../App.css"
+import "./FrameNav.css"
 
 export interface FrameNavProps {
     ix: number, total: number,
@@ -10,19 +10,19 @@ export interface FrameNavProps {
 
 export const FrameNav = (props: FrameNavProps) =>
     <div className="frame-nav">
-        <input
+        <input className="frame-nav-button"
               disabled={props.ix==1}
               type="Button"
               onClick={() => props.gotoCommitCb(1)}
               value="|<"
         />
-        <input
+        <input className="frame-nav-button"
               disabled={props.ix==1}
               type="Button"
               onClick={() => props.gotoCommitCb(props.ix-10)}
               value="<<"
         />
-        <input
+        <input className="frame-nav-button"
               disabled={props.ix==1}
               type="Button"
               onClick={() => props.gotoCommitCb(props.ix-1)}
@@ -31,19 +31,19 @@ export const FrameNav = (props: FrameNavProps) =>
 
         {props.ix} / {props.total}
 
-        <input
+        <input className="frame-nav-button"
                disabled={props.ix==props.total}
                type="Button"
                onClick={() => props.gotoCommitCb(props.ix+1)}
                value=">"
         />
-        <input
+        <input className="frame-nav-button"
                disabled={props.ix==props.total}
                type="Button"
                onClick={() => props.gotoCommitCb(props.ix+10)}
                value=">>"
         />
-        <input
+        <input className="frame-nav-button"
               disabled={props.ix==props.total}
               type="Button"
               onClick={() => props.gotoCommitCb(props.total)}

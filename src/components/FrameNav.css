@@ -1,5 +1,18 @@
-.frame-nav {
+.frame-nav
+{
+	display: flex;
 	margin: auto;
-	padding: 0;
 	width: 75%;
+}
+
+.frame-nav-button
+{
+    padding:10px 25px; 
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 1px;
+    min-width: 4em;
 }
